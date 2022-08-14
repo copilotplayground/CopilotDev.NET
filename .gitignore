@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/CopilotDev.NET.Api/bin/Debug/netstandard2.0
+/CopilotDev.NET.Api/obj
+/CopilotDev.NET.ConApp/bin/Debug/netcoreapp3.1
+/CopilotDev.NET.ConApp/obj

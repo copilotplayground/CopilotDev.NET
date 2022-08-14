@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopilotDev.NET.Api", "CopilotDev.NET.Api\CopilotDev.NET.Api.csproj", "{C238DB14-40A7-4EB2-BF67-016F77B6B306}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopilotDev.NET.ConApp", "CopilotDev.NET.ConApp\CopilotDev.NET.ConApp.csproj", "{9B3C6E8B-A01C-428E-A12C-69F5094256B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C238DB14-40A7-4EB2-BF67-016F77B6B306}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C238DB14-40A7-4EB2-BF67-016F77B6B306}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C238DB14-40A7-4EB2-BF67-016F77B6B306}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C238DB14-40A7-4EB2-BF67-016F77B6B306}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B3C6E8B-A01C-428E-A12C-69F5094256B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B3C6E8B-A01C-428E-A12C-69F5094256B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B3C6E8B-A01C-428E-A12C-69F5094256B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B3C6E8B-A01C-428E-A12C-69F5094256B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2D548A89-0CDA-431B-B40E-AE7315C47DEB}
+	EndGlobalSection
+EndGlobal
