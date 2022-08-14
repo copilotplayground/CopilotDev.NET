@@ -7,7 +7,7 @@ Unofficial C# developer API for Github Copilot.
 * This implementation has been written from scratch and does not contain any third party code. The code is fully licenced under MIT by me.
 * Calling the endpoints of Github Copilot is governed by the terms of service of Github Copilot. Keep Fair Use in mind.
 * The implementation may break at any given time. The called HTTP endpoints **are not** part of a public API.
-* This API is not intended to be used for any production cases because it may break any moment and would violate the terms of service of Github Copilot.
+* This API is not intended to be used for any production cases because it may break any moment and would probably violate the terms of service of Github Copilot.
 
 # Usage
 
