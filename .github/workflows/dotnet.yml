@@ -1,0 +1,33 @@
+name: .NET
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.0.x
+        
+    - name: Restore dependencies
+      run: dotnet restore
+      
+    - name: Build
+      run: dotnet build --configuration Release
+      
+    - name: Deploy
+      if: "contains(github.event.head_commit.message, '--deploy') && contains(github.ref, 'main')"
+      run: |
+       cd ./CopilotDev.NET.Api
+       nuget pack -Prop Configuration=Release
+       $nugetFile = Get-ChildItem *.nupkg | select-object name -ExpandProperty name
+       nuget push $nugetFile ${{secrets.NUGET_API_KEY}} -Source https://api.nuget.org/v3/index.json
