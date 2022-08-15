@@ -45,7 +45,6 @@ namespace CopilotDev.NET.ConApp
             });
             Console.WriteLine("Completions for a method description:");
             Console.WriteLine(string.Join("", completions2.Select(e => e.Choices[0].Text)));
-
             Console.ReadKey();
         }
     }
