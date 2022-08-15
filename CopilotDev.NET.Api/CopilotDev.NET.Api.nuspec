@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package >
+	<metadata>
+		<id>CopilotDev.NET.Api</id>
+		<version>1.0</version>
+		<title>Unofficial C# developer API for Github Copilot</title>
+		<authors>TheFortification</authors>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<license type="expression">MIT</license>
+		<description>Unofficial C# developer API for Github Copilot.</description>
+	</metadata>
+</package>
