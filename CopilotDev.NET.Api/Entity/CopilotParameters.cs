@@ -2,11 +2,14 @@
 
 namespace CopilotDev.NET.Api.Entity
 {
+    /// <summary>
+    /// Explanation for parameters can be found here.
+    /// https://beta.openai.com/docs/api-reference/completions
+    /// </summary>
     public class CopilotParameters
     {
         /// <summary>
-        /// Text context for the returned suggestions.
-        /// Support for placeholders is currently unknown. 
+        /// Text context for the returned completions.
         /// </summary>
         [JsonPropertyName("prompt")]
         public string Prompt { get; set; }
@@ -18,28 +21,32 @@ namespace CopilotDev.NET.Api.Entity
         public int MaxTokens { get; set; } = 30;
 
         /// <summary>
-        /// Unknown effect. Known values are '0.0f', '0.2f', '0.4f' or '0.8f'. Parameter N seems to be related.
+        /// Higher values means the model will take more risks.
+        /// 0.9 for more creative applications, and 0 for ones with a well-defined answer.
         /// </summary>
         [JsonPropertyName("temperature")]
-        public float Temperature { get; set; } = 0.2f;
+        public float Temperature { get; set; } = 1;
 
         /// <summary>
-        /// Unknown effect. Only value '1' seems to return something.
+        /// An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass.
+        /// So 0.1 means only the tokens comprising the top 10% probability mass are considered.
         /// </summary>
         [JsonPropertyName("top_p")]
-        public int TopP { get; set; } = 1;
+        public float TopP { get; set; } = 1F;
 
         /// <summary>
-        /// Unknown effect. Seems to be related to temperature.
+        /// How many completions to generate for each prompt.
+        /// You can group the related completions using the index property. e.g. completions.GroupBy(e => e.Choices[0].Index)
         /// </summary>
         [JsonPropertyName("n")]
-        public string N { get; set; }
+        public int N { get; set; } = 1;
 
         /// <summary>
-        /// Unknown effect. 
+        ///  Include the log probabilities on the logprobs most likely tokens, as well the chosen tokens.
+        /// For example, if logprobs is 5, the API will return a list of the 5 most likely tokens. The maximum value for logprobs is 5
         /// </summary>
         [JsonPropertyName("logprobs")]
-        public int LogProbs { get; set; } = 1;
+        public int? LogProbs { get; set; } = null;
 
         /// <summary>
         /// Should the response be streamed. Only true is allowed.
@@ -48,10 +55,11 @@ namespace CopilotDev.NET.Api.Entity
         public bool IsStreamEnabled { get; set; } = true;
 
         /// <summary>
-        /// Detailed effects are not known. Seems to be related to multi line line breaks for suggestions.
+        /// Up to 4 sequences where the API will stop generating further tokens. The returned text will not contain the stop sequence.
+        /// Use "\n" for one line completions. Use "\n\n" for multi line completions. 
         /// </summary>
-        [JsonPropertyName("stops")]
-        public string[] Stops { get; set; } = new string[] { "\n" };
+        [JsonPropertyName("stop")]
+        public string[] Stop { get; set; } = new[] {"\n"};
 
         /// <summary>
         /// Unknown effects. One known experimental feature is 'nextLineIndent'.
