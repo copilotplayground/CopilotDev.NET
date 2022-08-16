@@ -77,7 +77,6 @@ namespace CopilotDev.NET.Api
         /// <summary>
         /// Gets the returned result from the CopilotAI programmer.
         /// Takes a raw string which is sent per http request and returns the raw result. Useful for testing unknown parameters or results.
-        /// e.g.
         /// </summary>
         /// <param name="rawContent">Raw parameters.</param>
         /// <returns>Raw return result.</returns>
