@@ -11,6 +11,11 @@ Unofficial C# developer API for Github Copilot.
 
 # Usage
 
+**Nuget.org**
+```
+Install-Package CopilotDev.NET.Api
+```
+
 Take a look into CopilotDev.NET.ConApp/Program.cs. Clone the repository and try to run it.
 
 ```cs
